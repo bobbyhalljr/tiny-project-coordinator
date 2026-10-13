@@ -28,3 +28,5 @@ See `output.txt`.
 ## License
 
 MIT
+
+Read the write-up on Dev.to: https://dev.to/bobbyhalljr/anthropic-opened-claude-code-projects-lets-build-a-tiny-project-coordinator-in-typescript-5b91
