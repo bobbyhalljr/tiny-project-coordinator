@@ -29,4 +29,7 @@ See `output.txt`.
 
 MIT
 
-Read the write-up on Dev.to: https://dev.to/bobbyhalljr/anthropic-opened-claude-code-projects-lets-build-a-tiny-project-coordinator-in-typescript-5b91
+## Write-up
+
+- Dev.to: https://dev.to/bobbyhalljr/anthropic-opened-claude-code-projects-lets-build-a-tiny-project-coordinator-in-typescript-5b91
+- Substack: https://bobbyhalljr.substack.com/p/anthropic-opened-claude-code-projects
