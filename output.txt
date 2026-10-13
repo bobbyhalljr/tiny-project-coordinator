@@ -1,0 +1,34 @@
+tiny-project-coordinator demo
+
+=== demo 1: retire v1 checkout (cap 3) ===
+[START] api  migrate API callers off v1
+[START] web  point web checkout at v2
+[START] mobile  point mobile checkout at v2
+[QUEUE] docs  daily cap 3 hit
+[DONE ] api  migrate API callers off v1 (release Friday)
+[DONE ] web  point web checkout at v2 (release Friday)
+[DONE ] mobile  point mobile checkout at v2 (release Friday)
+
+assembled:
+project: checkout-v2
+goal: retire v1 checkout endpoint across api, web, and mobile
+memory: release=Friday; done:api=migrate API callers off v1 (release Friday); v1-callers=3 remaining in api/; done:web=point web checkout at v2 (release Friday); done:mobile=point mobile checkout at v2 (release Friday)
+done: api, web, mobile
+blocked: (none)
+queued: docs
+
+=== demo 2: cut p75 (overlap on checkout.ts) ===
+[START] profile  profile checkout endpoints
+[START] cache  add response cache for catalog
+[START] query  trim checkout SQL
+[DONE ] profile  profile checkout endpoints (release next Tue)
+[DONE ] cache  add response cache for catalog (release next Tue)
+[BLOCK] query  files claimed by profile: api/routes/checkout.ts
+
+assembled:
+project: checkout-perf
+goal: reduce checkout p75 latency
+memory: release=next Tue; done:profile=profile checkout endpoints (release next Tue); hotspot=POST /checkout confirm; done:cache=add response cache for catalog (release next Tue)
+done: profile, cache
+blocked: query (files claimed by profile: api/routes/checkout.ts)
+queued: (none)
